@@ -7,9 +7,7 @@ export interface ITask {
   status: string,
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TaskService {
   tasks: Array<ITask> = [
     {

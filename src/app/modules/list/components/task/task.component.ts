@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../../services/task.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ITask, TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task',
@@ -7,16 +7,17 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
+  selectedValue!: string;
 
-  constructor(
-    public taskService: TaskService
-  ) { }
+  constructor() { }
+
+  @Input()
+  task!: ITask;
 
   ngOnInit(): void {
+    this.selectedValue = this.task.status;
   }
-
-  task = this.taskService.tasks[0]
-  selectedValue = this.task.status;
+  
 
   changeAppereance(): string {
     switch (this.selectedValue) {
