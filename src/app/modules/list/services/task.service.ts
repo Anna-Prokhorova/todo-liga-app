@@ -32,4 +32,21 @@ export class TaskService {
     },
   ]
   constructor() { }
+
+  deleteTask(id: number): void {
+    this.tasks.splice(id,1)
+  }
+
+  addTask(newName: string, newDescription: string, newStatus: string): void{
+    this.tasks.push({
+      id: this.tasks.length,
+      name: newName,
+      description: newDescription,
+      status: newStatus,
+    })
+  }
+
+  changeStatus(id: number, newStatus: string): void{
+    this.tasks[id].status = newStatus
+  }
 }
