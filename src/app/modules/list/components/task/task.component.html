@@ -1,0 +1,13 @@
+<div class="task _regular" id="task" [ngClass]="changeAppereance()">
+    <h2 class="task__name">
+        {{task.name}}
+    </h2>
+    <p class="task__description">
+        {{task.description}}
+    </p>
+    <select [(ngModel)]="selectedValue" class="task__status">
+        <option value="regular" selected>Обычная</option>
+        <option value="important">Важная</option>
+        <option value="done">Выполненная</option>
+    </select>
+</div>
