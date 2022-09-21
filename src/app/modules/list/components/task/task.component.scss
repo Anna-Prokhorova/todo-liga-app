@@ -1,84 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 .task {
-    box-sizing: border-box;
-    width: 332px;
-    height: 223px;
-    background: #FFFEFB;
-    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  width: 332px;
+  height: 223px;
+  background: #fffefb;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
+    0px 6px 10px rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  padding: 16px;
+  position: relative;
+
+  &__name {
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  &__description {
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #3f3f3f;
+    overflow-y: scroll;
+    width: 300px;
+    height: 80px;
+  }
+
+  &__status {
+    width: 121.49px;
+    height: 36px;
+    background: #fffefb;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    padding: 16px;
-    position: relative;
-    
-    &__name {
-        margin: 0;
-        font-family:  'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 25px;
-    }
+    outline: none;
+    border: none;
+    color: #3f3f3f;
+    font-family: "Source Sans Pro";
+  }
 
-    &__description {
-        font-family: 'Source Sans Pro';
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        color: #3F3F3F;
-        overflow-y: scroll;
-        width: 300px;
-        height: 80px;
-    }
+  &__delete {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 32px;
+    height: 32px;
+    background: #ff8484;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+  }
 
-    &__status {
-        width: 121.49px;
-        height: 36px;
-        background: #FFFEFB;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        outline: none;
-        border: none;
-        color: #3F3F3F;
-        font-family: 'Source Sans Pro';
+  &:hover {
+    .task__delete {
+      display: block;
     }
+  }
 
-    &__delete {
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        width: 32px;
-        height: 32px;
-        background: #FF8484;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        border: none;
-        outline: none;
-        text-align: center;
-        display: none;
-        cursor: pointer;
-    }
+  &._regular {
+    border: 0.8px solid #457ec1;
+    color: #457ec1;
+  }
 
-    &:hover {
-        .task__delete {
-            display: block;
-        }
-    }
+  &._important {
+    border: 0.8px solid #ec671c;
+    color: #ec671c;
+  }
 
-    &._regular {
-        border: 0.8px solid #457EC1;
-        color: #457EC1;
-    }
-
-    &._important {
-        border: 0.8px solid #EC671C;
-        color: #EC671C;
-    }
-
-    &._done {
-        border: 0.8px solid #31B293;
-        color: #31B293;
-    }
+  &._done {
+    border: 0.8px solid #31b293;
+    color: #31b293;
+  }
 }
 
 ::-webkit-scrollbar {
-    width: 0;
-  }
+  width: 0;
+}

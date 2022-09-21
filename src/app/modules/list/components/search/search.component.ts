@@ -7,21 +7,19 @@ import { ITask } from '../../services/task.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  searchValue: string = '';
-  filterValue: string = 'default';
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  public searchValue: string = '';
+  public filterValue: string = 'default';
+  
   @Input()
-  tasks!: Array<ITask>;
+    tasks!: Array<ITask>;
 
   @Output()
   public searchEvent = new EventEmitter;
 
   @Output()
   public filterEvent = new EventEmitter;
+  constructor() { }
 
+  ngOnInit(): void {
+  }
 }

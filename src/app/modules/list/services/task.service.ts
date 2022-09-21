@@ -33,24 +33,24 @@ export class TaskService {
     },
   ];
 
-  searchValue: string = '';
-  filterValue: string = 'default';
+  private searchValue: string = '';
+  private filterValue: string = 'default';
 
   constructor() {}
 
-  deleteTask(task: ITask): void {
+  public deleteTask(task: ITask): void {
     this.tasks.splice(this.tasks.indexOf(task), 1);
   }
 
-  addTask(task: ITask): void {
+  public addTask(task: ITask): void {
     this.tasks.push(task);
   }
 
-  changeStatus(task: ITask, newStatus: string): void {
+  public changeStatus(task: ITask, newStatus: string): void {
     task.status = newStatus;
   }
 
-  searchTasks(): Array<ITask> {
+  public searchTasks(): Array<ITask> {
     return this.tasks.filter((t) => {
       return (
         t.name.toLowerCase().indexOf(this.searchValue.toLowerCase()) !== -1 && ((t.status === this.filterValue) || (this.filterValue === 'default'))
@@ -58,11 +58,11 @@ export class TaskService {
     });
   }
 
-  setSearch(value: string) {
+  public setSearch(value: string) {
     this.searchValue = value;
   }
 
-  setFilter(value: string) {
+  public setFilter(value: string) {
     this.filterValue = value;
   }
 }

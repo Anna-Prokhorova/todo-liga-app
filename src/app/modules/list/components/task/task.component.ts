@@ -7,25 +7,23 @@ import { ITask } from '../../services/task.service';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
-  selectedValue!: string;
-
-  constructor() { }
-
+  public selectedValue!: string;
+  
   @Input()
-  task!: ITask;
+    task!: ITask;
 
   @Output()
   public deleteEvent = new EventEmitter();
 
   @Output()
   public changeEvent = new EventEmitter();
+  constructor() { }
 
   ngOnInit(): void {
     this.selectedValue = this.task.status;
   }
   
-
-  changeAppereance(): string {
+  public changeAppereance(): string {
     this.changeEvent.emit(this.selectedValue)
     switch (this.selectedValue) {
       case "regular":

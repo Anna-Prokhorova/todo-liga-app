@@ -7,25 +7,15 @@ import { TaskService } from './services/task.service';
 import { SearchComponent } from './components/search/search.component';
 import { AddFormComponent } from './components/add-form/add-form.component';
 
-
-
 @NgModule({
   declarations: [
     ListComponent,
     TaskComponent,
     SearchComponent,
-    AddFormComponent
+    AddFormComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
-  providers: [
-    TaskService
-  ],
-  exports: [
-    ListComponent,
-    TaskComponent
-  ]
+  imports: [CommonModule, FormsModule],
+  providers: [TaskService],
+  exports: [ListComponent, TaskComponent],
 })
-export class ListModule { }
+export class ListModule {}

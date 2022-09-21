@@ -17,23 +17,23 @@ export class Task {
   styleUrls: ['./add-form.component.scss']
 })
 export class AddFormComponent implements OnInit {
-  name!: string;
-  description!: string;
-  status: string = 'regular';
+  public name!: string;
+  public description!: string;
+  public status: string = 'regular';
+
+  @Input()
+    tasks!: Array<ITask>;
+    
+  @Output()
+  public addEvent = new EventEmitter;
 
   constructor(
   ) { }
 
-  @Input()
-  tasks!: Array<ITask>;
-  
-  @Output()
-  public addEvent = new EventEmitter;
-
   ngOnInit(): void {
   }
 
-  addTask() {
+  public addTask() {
     const newTask = new Task(this.tasks.length, this.name, this.description, this.status)
     this.name = '';
     this.description = '';
