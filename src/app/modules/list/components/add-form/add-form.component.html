@@ -1,0 +1,38 @@
+<div class="add-form">
+    <h1 class="add-form__title">
+        Добавление задачи
+    </h1>
+    <form class="add-form__form form">
+        <fieldset class="form__section section">
+            <legend class="section__title">
+                Название задачи
+            </legend>
+            <input class="section__input" placeholder="Введите название задачи"
+            name="name"
+            [(ngModel)]="name">
+        </fieldset>
+        <fieldset class="form__section section">
+            <legend class="section__title">
+                Описание задачи
+            </legend>
+            <textarea class="section__input _more-text" placeholder="Введите описание задачи"
+            name="description"
+            [(ngModel)]="description"></textarea>
+        </fieldset>
+        <fieldset class="form__section section">
+            <legend class="section__title">
+                Статус задачи
+            </legend>
+            <select class="section__select"
+            name="status"
+            [(ngModel)]="status">
+                <option value="regular" selected>Обычная</option>
+                <option value="important">Важная</option>
+                <option value="done">Выполненная</option>
+            </select>
+        </fieldset>
+        <button class="form__button" (click)="addTask()">
+            Добавить задачу
+        </button>
+    </form>
+</div>

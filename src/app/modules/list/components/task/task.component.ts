@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ITask, TaskService } from '../../services/task.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ITask } from '../../services/task.service';
 
 @Component({
   selector: 'app-task',
@@ -14,12 +14,19 @@ export class TaskComponent implements OnInit {
   @Input()
   task!: ITask;
 
+  @Output()
+  public deleteEvent = new EventEmitter();
+
+  @Output()
+  public changeEvent = new EventEmitter();
+
   ngOnInit(): void {
     this.selectedValue = this.task.status;
   }
   
 
   changeAppereance(): string {
+    this.changeEvent.emit(this.selectedValue)
     switch (this.selectedValue) {
       case "regular":
         return 'task _regular';

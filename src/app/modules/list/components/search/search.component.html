@@ -1,0 +1,14 @@
+<div class="search">
+    <form class="search__form form" >
+        <input class="form__input" placeholder="Введите название задачи" [(ngModel)]="searchValue" (input)="searchEvent.emit(searchValue)" name="search">
+        <button class="form__button" (click)="searchEvent.emit(searchValue)">
+            Поиск
+        </button>
+    </form>
+    <select class="search__filter" [(ngModel)]="filterValue" (change)="filterEvent.emit(filterValue)">
+        <option value="default">По умолчанию</option>
+        <option value="regular">Обычные</option>
+        <option value="important">Важные</option>
+        <option value="done">Выполненные</option>     
+    </select>
+</div>
